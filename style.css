@@ -1,52 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* body */
+
+body {
+  background: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 input {
-  width: 30px;
+  background-color: grey;
+  margin: 0 20px;
+  color: white;
 }
 
-.quizzes {
+p {
+  padding: 5px 0;
+  color: white;
+  font-size: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  width: 50%;
+  margin: 3px auto;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  position: relative;
+}
+
+h1 {
+  color: #d9376e;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 0.7rem;
+  color: blanchedalmond;
+}
+
+.spans {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+/* quiz */
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.quiz-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.quiz-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+/* long quiz */
+
+.long-quiz-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.long-quiz-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.long-quiz-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+.display-total-value {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  gap: 10px;
+}
+
+.display-pt {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+/* Performance Task */
+
+/* project */
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.project-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.project-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+/* recitation */
+
+.recitation-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.recitation-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.recitation-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+/* attendance */
+
+.attendance-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.attendance-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.attendance-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+/* examination */
+
+.exam-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.exam-score {
+  width: 32px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: 20px;
+}
+
+.exam-total-score {
+  width: 32px;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 20px;
+}
+
+#display-exam {
+  margin-bottom: 30px;
+}
+
+.button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: antiquewhite;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: auto;
+  transform: translateY(-300px) translateX(220px);
 }
 
-.quiz {
-  display: flex;
-  font-size: 20px;
+/* button style */
+
+.btn {
+  all: unset;
 }
 
-.long-quiz {
-  display: flex;
-  font-size: 20px;
+.btn-style {
+  padding: 0.5em 1.3em;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  transition: all 0.5s;
+  color: aquamarine;
+  font-size: 18px;
 }
 
-.project {
-  display: flex;
-  font-size: 20px;
+.btn-style:hover {
+  transform: translateX(-5px);
+  transition: all 0.4s;
+  background-color: #9f70fd;
+  color: white;
 }
 
-.recitation {
+article {
   display: flex;
-  font-size: 20px;
 }
 
-.attendance {
-  display: flex;
-  font-size: 20px;
-}
-
-.examination {
-  display: flex;
-  font-size: 20px;
+img {
+  width: 300px;
+  height: 350px;
 }

@@ -1,90 +1,70 @@
-//Quizzes
-//Quiz
-let valueQuiz = document.getElementById("quiz");
-let totalQuiz = document.getElementById("total-quiz");
-//Long Test
-let valueLongQuiz = document.getElementById("long-quiz");
-let totalLongQuiz = document.getElementById("total-long-quiz");
-//function button to get the grade of Quizzes
-let btnOverAllQuiz = document.getElementById("overall-quizzes");
-//display overall grade of Quizzes
-let displayQuiz = document.getElementById("display-quizzes");
-//Performance Task
+const button = document.getElementById("btn");
+// quiz
+let quiz = document.getElementById("score-quiz");
+let quizTotal = document.getElementById("score-total-quiz");
+// long quiz
+let longQuiz = document.getElementById("score-long-quiz");
+let longQuizTotal = document.getElementById("score-total-long-quiz");
+//display
+let displayQuizzes = document.getElementById("display-total-quiz");
 // project
-let valueProject = document.getElementById("project");
-let totalProject = document.getElementById("total-project");
-//recitation
-let valueRecitation = document.getElementById("recitation");
-let totalRecitation = document.getElementById("total-recitation");
-//attendance
-let totalAttendance = document.getElementById("total-attendance");
-let valueAttendance = document.getElementById("attendance");
-//function button to get the grade of Performance Task
-let btnOverAllPt = document.getElementById("overall-pt");
-//display pt
-let displayPerformanceTask = document.getElementById("display-pt");
-//examination
-let valueExam = document.getElementById("exam");
-let totalExam = document.getElementById("total-exam");
-//function button to get the grade of Quarterly Exam
-let btnExam = document.getElementById("overall-exam");
-//display of exam
+let project = document.getElementById("score-project");
+let projectTotal = document.getElementById("score-total-project");
+// recitation
+let recitation = document.getElementById("score-recitation");
+let recitationTotal = document.getElementById("score-total-recitation");
+// attendance
+let attendance = document.getElementById("score-attendance");
+let attendanceTotal = document.getElementById("score-total-attendance");
+// display
+let overAllPerformanceTask = document.getElementById("displayPerformanceTask");
+// quarterly exam
+let exam = document.getElementById("score-exam");
+let examTotal = document.getElementById("score-total-exam");
+//display examination
 let displayExam = document.getElementById("display-exam");
-//overall grades
-let btnOverAllGrades = document.getElementById("overall-grades");
-//compute overall grades
-let valueOfOverallGrades = document.getElementById("compute-overall-grades");
+//overall display
+let displayGrades = document.getElementById("overall-grades");
+//button
 
-let totalArr = [];
+button.addEventListener("click", () => {
+  //quizzes
+  const getQuizValue = quiz.value / quizTotal.value;
+  const getLongQuizValue = longQuiz.value / longQuizTotal.value;
+  const quizzesValue = getQuizValue + getLongQuizValue;
+  const multiplyQuizzes = parseInt(quizzesValue * 25) / 2;
 
-//Quizzes Button
-btnOverAllQuiz.addEventListener("click", () => {
-  const getQuizValue = valueQuiz.value;
-  const multiplyQuiz = Math.round(getQuizValue * 0.1);
-  totalQuiz.textContent = multiplyQuiz;
+  displayQuizzes.textContent = multiplyQuizzes + "%";
 
-  const getLongQuizValue = valueLongQuiz.value;
-  const multiplyLongQuiz = Math.round(getLongQuizValue * 0.15);
-  totalLongQuiz.textContent = multiplyLongQuiz;
+  //performance Task
+  const getProjectValue = project.value / projectTotal.value;
+  const getRecitationValue = recitation.value / recitationTotal.value;
+  const getAttendanceValue = attendance.value / attendanceTotal.value;
+  const overAllValue =
+    getProjectValue + getRecitationValue + getAttendanceValue;
+  const multiplyPt = (overAllValue * 50) / 3;
 
-  const overAllQuizzes = multiplyQuiz + multiplyLongQuiz;
-  displayQuiz.textContent = overAllQuizzes + "%";
+  overAllPerformanceTask.textContent = multiplyPt.toFixed(2) + "%";
+
+  //examination
+  const getExamValue = exam.value / examTotal.value;
+  const multiplyExam = parseInt(getExamValue * 25);
+
+  displayExam.textContent = multiplyExam + "%";
+
+  const sum = multiplyQuizzes + multiplyPt + multiplyExam;
+
+  displayGrades.textContent = sum.toFixed(2) + "%";
 });
 
-//Performance Task Button
+// identity
+var a;
+var b;
 
-btnOverAllPt.addEventListener("click", () => {
-  const getProjectValue = valueProject.value;
-  const multiplyProject = Math.round(getProjectValue * 0.35);
-  totalProject.textContent = multiplyProject;
+a = prompt("Enter your name:");
+b = prompt("ID number:");
 
-  const getRecitationValue = valueRecitation.value;
-  const multiplyRecitation = Math.round(getRecitationValue * 0.15);
-  totalRecitation.textContent = multiplyRecitation;
-
-  const getAttendanceValue = valueAttendance.value;
-  const multiplyAttendance = Math.round(getAttendanceValue * 0.05);
-  totalAttendance.textContent = multiplyAttendance;
-
-  const displayOver = multiplyProject + multiplyRecitation + multiplyAttendance;
-});
-
-//Quarterly Exam Button
-
-btnExam.addEventListener("click", () => {
-  const getExamValue = parseFloat(valueExam.value); // Parse exam value to float
-  const multiplyExam = Math.round(getExamValue * 0.2); // Multiply exam value by 20%
-  totalExam.textContent = multiplyExam + "%"; // Display the rounded exam score
-});
-
-let maxGrade = 100;
-let sum = 6;
-btnOverAllGrades.addEventListener("click", () => {
-  const getQuizValue = valueQuiz.value;
-  const multiplyQuiz = Math.round(getQuizValue * 0.1);
-  totalQuiz.textContent = multiplyQuiz;
-
-  const getLongQuizValue = valueLongQuiz.value;
-  const multiplyLongQuiz = Math.round(getLongQuizValue * 0.15);
-  totalLongQuiz.textContent = multiplyLongQuiz;
-});
+let nameEl = document.querySelector("#name");
+let idNumber = document.querySelector("#id-learner");
+nameEl.innerHTML = a;
+idNumber.innerHTML = b;
