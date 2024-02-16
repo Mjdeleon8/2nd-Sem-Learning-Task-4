@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+input {
+  width: 30px;
+}
+
+.quizzes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+.quiz {
+  display: flex;
+  font-size: 20px;
+}
+
+.long-quiz {
+  display: flex;
+  font-size: 20px;
+}
+
+.project {
+  display: flex;
+  font-size: 20px;
+}
+
+.recitation {
+  display: flex;
+  font-size: 20px;
+}
+
+.attendance {
+  display: flex;
+  font-size: 20px;
+}
+
+.examination {
+  display: flex;
+  font-size: 20px;
+}

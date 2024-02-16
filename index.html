@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="quiz-container">
+        <h4>Quiz</h4>
+        <div class="quiz">
+          <input type="number" name="" id="quiz" min="0" max="15" />
+          <p>x 10%</p>
+          <h2 id="total-quiz"></h2>
+        </div>
+
+        <h4>Long Quiz</h4>
+        <div class="long-quiz">
+          <input type="text" name="" id="long-quiz" />
+          <p>x 15%</p>
+          <h2 id="total-long-quiz"></h2>
+        </div>
+        <button id="overall-quizzes">OverAll</button>
+        <div>
+          <h3 id="display-quizzes"></h3>
+        </div>
+      </div>
+      <div class="performance-task-container">
+        <h4>Project</h4>
+        <div class="project">
+          <input type="text" name="" id="project" />
+          <p>x 35%</p>
+          <h2 id="total-project"></h2>
+        </div>
+        <h4>Recitation</h4>
+        <div class="recitation">
+          <input type="text" name="" id="recitation" />
+          <p>x 15%</p>
+          <h2 id="total-recitation"></h2>
+        </div>
+        <h4>Attendance</h4>
+        <div class="attendance">
+          <input type="text" name="" id="attendance" />
+          <p>x 5%</p>
+          <h2 id="total-attendance"></h2>
+        </div>
+        <button id="overall-pt">OverAll</button>
+      </div>
+      <div class="examination-container">
+        <h4>Exam</h4>
+        <div class="examination">
+          <input type="number" name="" id="exam" min="0" max="50" />
+          <p>x 20%</p>
+          <h2 id="total-exam"></h2>
+        </div>
+        <button id="overall-exam">OverAll</button>
+      </div>
+      <div>
+        <h3 class="display-exam"></h3>
+      </div>
+    </section>
+    <button id="overall-grades">Grades</button>
+    <h2 id="compute-overall-grades"></h2>
+    <div>
+      <h3 class="display-pt"></h3>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<!-- //   valueOfOverallGrades.textContent =
+//   let sum = 0;
+//   for (let i = 0; i < totalArr.length; i++) {
+//     sum = sum + totalArr[i];
+//   }
+//   let ans = (parseInt(sum) * 100) / 6;
+//   if (ans >= 100) {
+//     console.log("Lagpas");
+//   } else {
+//     console.log(ans);
+//   } -->
